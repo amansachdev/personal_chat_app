@@ -28,6 +28,7 @@
                 <textarea id="message" class="form-control" placeholder="Message"></textarea>
                 <br>
                 <button id="send" class="btn-success btn">Send</button>
+                <button id="reset" class="btn-danger btn">Reset</button>
             </div>
         </div>
     </div>
@@ -43,9 +44,16 @@
                     name: $("#name").val(),
                     message: $("#message").val()
                 }
-                console.log("clicked")
+                $("#name").val('')
+                $("#message").val('')
                 postMessage(message)
-
+            })
+            $('#reset').click(() => {
+                $('#messages').empty();
+                postMessage({
+                    name:'reset',
+                    message:'reset'
+                })
             })
             getMessages();
         })

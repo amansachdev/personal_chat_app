@@ -18,9 +18,13 @@ app.get('/messages', (req,res) => {
 })
 
 app.post('/messages', (req,res) => {
-    res.sendStatus(200)
-    messages.push(req.body)
-    io.emit("message", req.body)
+    if (req.body.message == 'reset'){
+        messages.length = 0
+    }else{
+        res.sendStatus(200)
+        messages.push(req.body)
+        io.emit("message", req.body)
+    }
 })
 
 io.on('connection',(socket)=>{
