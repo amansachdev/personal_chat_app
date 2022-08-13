@@ -27,6 +27,6 @@ io.on('connection',(socket)=>{
     console.log("User connected")
 })
 
-var server = http.listen(30100, ()=>{
+var server = http.listen(process.env.PORT || 5000, ()=>{
     console.log("Server is listening on port", server.address().port)
 })
