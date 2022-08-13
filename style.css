@@ -1,0 +1,12 @@
+.text{
+    background-color: rgb(0, 110, 255);
+}
+
+#messages{
+    margin-top: 20px;
+    border: 2px solid;
+}
+
+button{
+    margin-bottom: 10px;
+}
